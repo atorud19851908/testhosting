@@ -1,45 +1,57 @@
-window.addEventListener('DOMContentLoaded', function () {
-  window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    header.classList.toggle('sticky', window.scrollY > 0)
-  })
+let email = document.querySelector("#email");
+let locat = document.querySelector("#location");
+let phone = document.querySelector("#phone");
+let button = document.querySelector("#button_submit");
 
-  const menuBtn = document.querySelector('.menu-btn')
-  const navigation = document.querySelector('.navigation')
-  const navigationItems = document.querySelectorAll('.navigation a')
+let form = document.querySelector("form");
 
-  menuBtn.addEventListener('click', () => {
-    menuBtn.classList.toggle('active')
-    navigation.classList.toggle('active')
-  })
 
-  navigationItems.forEach(navItem => {
-    navItem.addEventListener('click', () => {
-      menuBtn.classList.remove('active')
-      navigation.classList.remove('active')
-    })
-  })
-
-  const scrollBtn = document.querySelector('.scrollToTop-btn')
-  window.addEventListener('scroll', () => {
-    scrollBtn.classList.toggle('active', window.scrollY > 500)
-  })
-  scrollBtn.addEventListener('click', () => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  })
-
-  window.addEventListener('scroll', () => {
-    let reveals = document.querySelectorAll('.reveal')
-
-    for(let i = 0; i< reveals.length; i++) {
-      let windowHeight = window.innerHeight;
-      let revealTop = reveals[i].getBoundingClientRect().top;
-      let revealPoint = 50;
-
-      if(revealTop < windowHeight - revealPoint) {
-        reveals[i].classList.add('active')
-      }
-    }
-  })
+form.addEventListener("submit",function(e){
+      e.preventDefault();
+    
 })
+let e = document.querySelector(".email");
+let l = document.querySelector(".location");
+let p = document.querySelector(".phone");
+
+button.addEventListener("click",function(){
+
+       e.innerHTML = email.value;
+       l.innerHTML = locat.value;
+       p.innerHTML = phone.value;
+console.log('keyup');
+      
+
+})
+
+
+
+
+
+
+
+
+//  <div class="container">
+// <div class="wrapper">
+// <div class="card">
+//     <div class="image">
+//         <img src="image/img1.jpeg" alt="">
+//         <button class="btn_white">Uplaod Picture</button>
+//     </div>
+//     <div class="card_data">
+//         <h1>System Administrator</h1>
+//         <h3>System Administrator at Empty</h3>
+//         <p class="email">Email:</p>
+//         <p class="location">Location:</p>
+//         <p class="phone">Phone:</p>
+//     </div>
+// </div>
+// <form>
+//    <button class="btn_succes">About</button>
+//    <input type="email" placeholder="Email" id="email">
+//    <input type="text" placeholder="Location" id="location">
+//    <input type="phone" placeholder="Phone" id="phone">
+//     <button id="button_submit">Submit</button>
+// </form>
+// </div>
+// </div>
